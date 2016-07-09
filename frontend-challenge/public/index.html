@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <title>Twitter trends</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css"> 
+    <script src="http://d3js.org/d3.v3.min.js"></script>       
+	</head>
+   
+	<body>
+		<div class="container">
+			<h1>Twitter Trends</h1>
+			<div class="col-sm-3">
+				<div class="panel">
+				  <div class="panel-heading">
+				  	<h3 class="panel-title">Select countries</h3>
+				  </div>
+				  <div class="panel-body">
+					    <label><i class="fa fa-globe" aria-hidden="true"></i> Select Country</label>
+				      <select class="form-control" id="selectCountry1">
+				      </select>
+			      	<br>
+				      <label><i class="fa fa-globe" aria-hidden="true"></i> Select Country</label>
+				      <select class="form-control" id="selectCountry2">
+
+				      </select>
+				  </div>
+				</div>
+
+				<div class="panel">
+				  <div class="panel-heading">
+				    <h3 class="panel-title">Common trends</h3>
+				  </div>
+				  <div class="panel-body">
+				    <li>Music</li>
+				  </div>
+				</div>
+			</div>
+
+			<div class="col-sm-9">
+				<h5>Trend weight contribution</h5>
+				Duration: 0<input type="range" id="duration" min="0" max="5000">5000 
+				<br>
+				<button class="randomize">randomize</button> 
+				<div class="donutDiv" id="donutDiv">
+				</div>
+			</div>
+		</div>
+		<script type="text/x-handlebars-template" id="countryListTpl">
+			{{#each countrylist}}
+				<option>{{country}}</option>
+			{{/each}}
+		</script>
+
+		<script type="text/javascript" src="js/donut.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	  	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.1.0/d3.js"></script>
+	  	<script type="text/javascript" src="js/lib/handlebars-v4.0.5.js"></script>
+    <script type="text/javascript" src="js/handlebarData.js"></script>  
+	  <!-- <script type="text/javascript">
+	  	 function getRequest(url) {
+	        var request = $http({
+	            method: 'get',
+	            url: url
+	        });
+	    	}
+	  </script> -->
+	 <script type="text/javascript">
+	  	
+	  // // Grab the template script
+	  // var theTemplateScript = $("#countryListTpl").html();
+
+	  // // Compile the template
+	  // var theTemplate = Handlebars.compile(theTemplateScript);
+
+	  // // Define our data object
+	  // var context={
+	  // 	  countryList: [ 
+		 //      { country: 'India', },
+		 //      { country: 'London', },
+		 //      { country: 'Eric', },
+		 //      { country: 'Kenny' },
+		 //      { country: 'Bart', }
+		 //    ]
+	  // };
+
+	  // // Pass our data to the template
+	  // var theCompiledHtml = theTemplate(context);
+
+	  // // Add the compiled html to the page
+	  // $('#selectCountry1').html(theCompiledHtml);
+	  // $('#selectCountry2').html(theCompiledHtml);
+
+
+	  </script>
+	</body>
+</html>
